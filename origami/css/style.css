@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -50,10 +51,13 @@
 
 :root {
     --main-clr:rgb(255, 255, 255);
-    color: ;
 }
 
 /* Start Global Classes */
+.container {
+    margin-inline: auto;
+    padding: 20px 40px;
+}
 ul {
     list-style: none;
 }
@@ -63,21 +67,26 @@ a {
 
 img {
     display: block;
+    max-width: 100%;
 }
 
 /* End Global Classes */
 
 /* Start Header */
+
 .main-header {
+
+    position: absolute;
+    background: rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* width: 100%; */
 font-family: poppins,sans-serif;
-background-color: var(--main-clr);
-box-shadow: 0 15px 15px 10px rgba(0, 0, 0, 0.068);
 }
 
-.main-header .container {
-    margin-inline: auto;
-    padding: 20px 40px;
-}
+ 
 .main-header .container .info {
     display: flex;
     justify-content: space-between;
@@ -99,8 +108,14 @@ box-shadow: 0 15px 15px 10px rgba(0, 0, 0, 0.068);
 
 }
 .main-header .container .info .col-one ul li :is(i, a,p)  {
-color: #353535;
+color: #fff;
+opacity: .60;
 font-size: 14px;
+transition: 0.3s ;
+}
+
+.main-header .container .info .col-one ul li:hover :is(a,p) {
+    opacity: 1;
 }
 
 
@@ -116,8 +131,8 @@ font-size: 14px;
     align-items: center;
     gap: 10px;
 }
-.main-header .container .info .col-two .consult {
-    background-color: rgb(43, 67, 175);
+ .consult {
+    background-color:rgb(98 98 98 / 21%);
     color: white;
     white-space: nowrap;
     padding: 10px 20px;
@@ -181,7 +196,6 @@ a .fa-tiktok:hover  {
 }
 
 .main-menu-wrapper {
-    background-color: #eee;
 }
 
 .main-menu-wrapper .container  {
@@ -190,44 +204,38 @@ a .fa-tiktok:hover  {
 
 .main-header  .main-menu__items {
     display: flex;
-    justify-content: flex-end;
+    justify-content:space-between;
     align-items: center;
-    background-color: #eee;
     position: relative;
     padding: 20px;
 }
 
 .main-header  .main-menu__items .logo {
-    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
     width:100px;
     overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.main-header  .main-menu__items  .logo__wrapper {
-    background-color: rgb(54, 49, 49);
-}
-
-.main-header .main-menu__items .logo .logo__wrapper {
-    background-color: white;
 }
 .logo img {
     max-width: 100%;
+    min-width: 60px;
 }
 
 .main-header  .main-menu__items nav ul {
     display: flex;
     gap: 25px;
 }
-.main-header  .main-menu__items nav li {
-    
+.main-header  .main-menu__items nav li:hover a {
+    color: rgb(255, 255, 255);
 }
 .main-header  .main-menu__items nav li a {
-    font-size: 17px;
+    font-size: 15px;
     text-transform: capitalize;
-    color: #353535;
+    color: #fff;
     font-weight: 600;
+    transition: color 0.3s ;
+}
+
+.main-header  .main-menu__items nav li:hover a{
+    color:#18ba60;
 }
 
 /* start bars */
@@ -235,9 +243,8 @@ a .fa-tiktok:hover  {
     display: none;
 }
 .bars {
-width: 40px;
-height: 40px;
-border: 3px solid;
+width: 25px;
+height: 25px;
 border-radius: 8px;
 position: relative;
 }
@@ -246,7 +253,7 @@ position: relative;
     display: block;
     width: 80%;
     height: 10%;
-    background-color: black;
+    background-color: white;
     position: absolute;
     left: 10%;
     border-radius: 50px;
@@ -282,9 +289,229 @@ position: relative;
 
 }
 
+
+/* mob menu  */
+.mob-main-menu {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: -100%;
+    top: 0;
+    z-index: 1;
+    transition:  0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mob-main-menu .mob-menu-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: -1;
+}
+
+.mob-main-menu .menu-items {
+    height: 100vh;
+    width: 290px;
+    padding: 20px;
+    background-color: white;
+    position: relative;
+    transition: left 0.5s ease-in-out;
+}
+
+.mob-main-menu .logo {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.mob-main-menu nav ul {
+    width: 100%;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+
+.mob-main-menu nav li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    position: relative;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.mob-main-menu .fa-angle-up {
+    display: none;
+}
+
+.mob-main-menu nav li a {
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+    transition: all 0.3s ;
+}
+.mob-main-menu nav li i {
+    color: #222;
+    transition: all 0.3s;
+}
+
+.mob-main-menu nav li a:hover {
+    color: #007bff;
+}
+
+.mob-main-menu .transparent-layer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.521);
+    height: 100vh;
+    z-index: -1;
+}
+
+.mob-main-menu .sub-menu{
+    position: absolute;
+    top: 50px;
+    width: calc(100% - 20px);
+    margin-left: 20px;
+    visibility: hidden;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.mob-main-menu .sub-menu a{
+    font-size: .9rem;
+}
+
+.mob-main-menu .social-icons {
+    margin: 30px 0 60px 0;
+}
+
+.mob-main-menu .social-icons ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mob-main-menu .social-icons ul li {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+    padding-top: 9px;
+    border: 1px solid rgb(238, 238, 238);
+}
+
+.mob-main-menu .social-icons ul li i {
+    color: #007bff;
+}
+
+.mob-menu-footer ul li {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.mob-menu-footer ul li a {
+    font-size: 15px;
+    color: #505056;
+}
+
+.mob-menu-footer ul li i {
+    color: #007bff;
+    font-size: 15px;
+}
+
+
 /* End Header */
 
+/* start landing */
+.landing-section {
+    background: url(../images/last-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 300px;
+    padding-bottom: 30px;
+    height: fit-content;
+    font-family: poppins;
+}
 
+.landing-section .container {
+    padding-block: 0;
+}
+
+.landing-section .landing__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.landing-section .landing__content h1 {
+font-size: 50px;
+color: #fff;
+font-weight: 700;
+}
+.landing-section .landing__content p {
+font-size: 18px;
+color: white;
+margin-block: 30px;
+}
+
+.landing-section .consult {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 15px 30px;
+    background: transparent;
+    border: 1px solid #fff;
+    width: fit-content;
+    transition: background-color 0.4s, color 0.7s;
+}
+
+.landing-section .consult a {
+    font-size: 20px;
+    color: #eee;
+
+}
+
+.landing-section .consult .left-slide {
+    position: absolute;
+    background-color: white;
+    rotate: -45deg;
+    width: 0;
+    height: 220%;
+    left: -14px;
+    top: -15px;
+    transition: 0.4s;
+
+    z-index: -1;
+}
+.landing-section .consult .right-slide {
+    display: block;
+    position: absolute;
+    background-color: white;
+    rotate: 135deg;
+    width: 0;
+    height: 220%;
+    right: -18px;
+    top: -62px;
+    transition: 0.4s;
+    z-index: -1;
+
+}
+
+.landing-section .consult:hover a {
+    color: #333;
+}
+.landing-section .consult:hover .left-slide {
+    width: 66%;
+    color: #333;
+}
+.landing-section .consult:hover .right-slide {
+    width:56%;
+
+}
+/* End landing */
 
 
 /* modifying Media queries styling */
@@ -297,12 +524,27 @@ position: relative;
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
+    .landing-section .container {
+        overflow: hidden !important;
+    }
+    .landing-section .landing__content h1 {
+        font-size: 30px !important;
+    }
+    .landing-section .landing__content p {
+        font-size: 14px !important;
+    }
+
 }
 
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) {
-
+    .landing-section .landing__content h1 {
+        font-size: 40px;
+    }
+    .landing-section .landing__content p {
+        font-size: 16px;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -317,6 +559,30 @@ position: relative;
 
     .main-header  .main-menu__items nav {
         display: none;
+        /* position: absolute;
+    top: 0;
+    background-color: #333;
+    width: 80%;
+    padding: 30px;
+    left: -40px;
+    height: 100vh;
+    z-index: 1000; */
+    }
+
+    .main-header .main-menu__items nav ul {
+        flex-direction: column;
+    }
+
+    .main-header .intro-nav {
+        display: none;
+    }
+
+    .main-header .main-menu__items {
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 70px;
     }
 
 }
