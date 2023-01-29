@@ -54,6 +54,9 @@
 }
 
 /* Start Global Classes */
+section {
+    margin-bottom: 40px;
+}
 .container {
     margin-inline: auto;
     padding: 20px 40px;
@@ -501,21 +504,22 @@ a .fa-linkedin-in:hover {
     width: fit-content;
     margin-inline: auto;
     text-align: center;
+    margin-bottom: 40px;
 }
 .head-content h1 {
     color: #262e2e;
     position: relative;
 }
 
-.head-content h1:after {
+/* .head-content h1:after {
     content: '';
     position: absolute;
-    width: 5px;
-    height: 100%;
+    width: 8px;
+    height: 42px;
     background-color: #262e2e;
-    left: -10px;
+    left: -11px;
     border-radius: 8px;
-}
+} */
 
 .head-content p {
     margin-top: -20px;
@@ -530,13 +534,6 @@ a .fa-linkedin-in:hover {
     gap: 83px;
 }
 
-.section-one__wrapper .img-wrapper {
-
-}
-
-.section-one .col {
-    
-}
 .section-one .col img {
     max-width: 450px;
     min-width: 250px;
@@ -577,27 +574,173 @@ a .fa-linkedin-in:hover {
 
 }
 
-.section-one .consult {
+.sections.consult {
     margin-top: 50px;
     background-color: black;
 }
 
-.section-one .consult:hover  {
+.sections.consult:hover  {
     background-color: white;
     border: 1px solid black;
 }
 
-.section-one .consult:hover  a {
+.sections.consult:hover  a {
     color: black;
 }
 
-.section-one .consult:hover :is(.right-slide, .left-slide) {
+.sections.consult:hover :is(.right-slide, .left-slide) {
     background-color: white;    
 }
 
 /* End section one */
 
+/*Start section two */
+.section-two {
+font-family: "poppins", sans-serif;
+background: #eee;
+}
 
+.section-two .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px 20px;
+    overflow: hidden;
+    gap: 30px;
+}
+.card i {
+    font-size: 50px;
+    color: #18ba60;
+}
+.card  h1 {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+    color: #242424;
+    letter-spacing: .32px;
+    text-transform: uppercase;
+
+}
+.card  p {
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: .32px;
+    color: #898989;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.card,
+.card :is(p,h1,i){
+    transition: 0.4s;
+}
+
+.card:hover :is(h1, p, i)  {
+    color: white;
+}
+
+.card:hover {
+    background-color: #262e2e;
+}
+
+/*End section two */
+
+/* Start section Three */
+.section-three {
+    font-family: "poppins", sans-serif;
+    background-color: #eee;
+}
+
+.clinets-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.clinets-wrapper img {
+    width: 90px;
+    border-radius: 10px;
+}
+/* End section Three */
+
+/* Start section four */
+.section-four {
+    font-family: "poppins", sans-serif;
+
+}
+
+.section-four .blogs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.section-four .blog {
+cursor: pointer;
+}
+
+.section-four .blog h4  {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #242424;
+    line-height: 22px;
+    letter-spacing: .34px;
+}
+
+.img-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.img-wrapper img {
+    max-width: 100%;
+}
+
+.img-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    background-color: #18b960a4;
+    transition: width 0.4s;
+}
+
+.img-wrapper::after {
+    content: 'Read more';
+    position: absolute;
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition:  0.4s;
+    font-weight: 600;
+}
+
+.blog:hover .img-wrapper::before {
+    width: 100%;
+}
+.blog:hover .img-wrapper::after {
+    opacity:1;
+}
+/* End section four */
 
 
 
@@ -647,7 +790,7 @@ a .fa-linkedin-in:hover {
     }
 
     .head-content h1 {
-        font-size: 20px;
+        font-size: 24px;
         white-space: nowrap;
     }
 
@@ -658,7 +801,7 @@ a .fa-linkedin-in:hover {
 
     .head-content p {
         margin-top: -12px;
-        font-size: 10px;
+        font-size: 13px;
 
      }
 
@@ -685,6 +828,18 @@ a .fa-linkedin-in:hover {
 
     .consult a {
         font-size: 15px;
+    }
+
+    .consult:hover .right-slide {
+        top: -45px;
+    }
+
+    .consult:hover .left-slide {
+        left: 1px;
+    }
+
+    .section-four .blogs {
+        justify-content: center;
     }
 
 }
@@ -726,6 +881,11 @@ a .fa-linkedin-in:hover {
     .logo img {
         width: 70px;
     }
+
+    .section-four .blogs {
+        justify-content: center;
+    }
+
 
 }
 
