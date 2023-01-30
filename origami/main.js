@@ -118,6 +118,29 @@ let dateNow = new Date().getFullYear()
 
 year.innerHTML = dateNow
 
+//Emerging section smoothly
+
+let sections = document.querySelectorAll('.items')
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        if(entry.target.classList.contains("right")) {
+            entry.target.classList.add("fadeInRight");
+        } else if (entry.target.classList.contains("left")) {
+            entry.target.classList.add("fadeInLeft");
+        } else if (entry.target.classList.contains("bottom")){
+            entry.target.classList.add("fadeInBottom");
+        } else {
+            entry.target.classList.add("fadeInTop");
+        }
+    } else {
+      entry.target.classList.remove("active");
+    }
+  });
+});
+sections.forEach(section => {
+  observer.observe(section);
+});
 
 
 
