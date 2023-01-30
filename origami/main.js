@@ -99,7 +99,8 @@ readMore.forEach(function (element, index) {
 
 
         //close blog-content after done
-        newDivOne.onclick = function () {
+        let dd = document.querySelector('.blog-content-wrapper')
+        dd.onclick = function () {
             newDivOne.remove()
         }
     })
@@ -109,26 +110,13 @@ readMore.forEach(function (element, index) {
 
 
 
+//Copyright year dynamically
 
+let year = document.querySelector('.year')
 
+let dateNow = new Date().getFullYear()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+year.innerHTML = dateNow
 
 
 
