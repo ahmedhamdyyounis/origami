@@ -85,6 +85,7 @@ img {
     left: 0;
     width: 100%;
     font-family: "poppins",sans-serif;
+    z-index: 10;
 }
 
 .main-header .container  {
@@ -1121,4 +1122,101 @@ footer .copyright p {
 
 section {
     overflow: hidden;
+}
+
+
+/* Sections Fading Animations */
+
+/* Fading Left */
+.fadeInLeft {
+    animation: fadeInLeft 1.2s both;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Fading Top */
+.fadeInTop {
+    animation: fadeInTop 1.2s both;
+}
+
+@keyframes fadeInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* fadeInBottom */
+.fadeInBottom {
+    animation: fadeInBottom 1.2s both;
+}
+
+@keyframes fadeInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fadeInBottom-2 {
+    animation: fadeInBottom 2.5s both;
+}
+
+@keyframes fadeInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(25%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fadeInBottom-3 {
+    animation: fadeInBottom 3s both;
+}
+
+@keyframes fadeInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(25%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInRight {
+    animation: fadeInRight 1.2s both;
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
