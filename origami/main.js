@@ -143,6 +143,54 @@ sections.forEach(section => {
 });
 
 
+// start scroll
+
+class ScrlBtn {
+    constructor() {
+        // Bind the click event to the scrollUp function
+        this.btn = document.querySelector('.scrl-btn');
+        this.btn.addEventListener('click', this.scrollUp.bind(this));
+    }
+
+    scrollUp() {
+        // Scroll to the top of the page with a smooth animation
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Initialize the ScrlBtn class
+const scrollButton = new ScrlBtn();
+
+function displayOnScroll() {
+    // Get the target element
+    const target = document.querySelector('.scrl-btn');
+
+    // Get the current scroll position
+    const currentScroll = window.pageYOffset;
+
+    // Show the target element when the current scroll is greater than 50px
+    if (currentScroll > 900    ) {
+        target.style.opacity = '1';
+        target.style.visibility = 'visible';
+    }  else if (document.body.scrollTop === 0 ) {
+        target.style.opacity = '0';
+        target.style.visibility = 'hidden';
+
+    } else {
+        target.style.opacity = '0';
+        target.style.visibility = 'hidden';
+    }
+}
+
+// Call the function on scroll
+document.addEventListener('scroll', displayOnScroll);
+
+// end sroll 
+
 
 
 
